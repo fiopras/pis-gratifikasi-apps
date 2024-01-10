@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Login Page -->
+  <div class="container">
+    <h1 class="heading">Create Account<br><br></h1>
+    <p class="para">Sign up to get started!</p>
+    <form [formGroup]="signUpForm">
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Full Name</legend> 
+          <ion-input formControlName="userName" type="text" placeholder="Full Name"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset  class="input-item">
+          <legend>Email</legend> 
+          <ion-input formControlName="email" type="email" placeholder="mk.pertamina@pertamina.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend> 
+          <ion-input formControlName="password" type="password" placeholder="*******"></ion-input>
+        </fieldset>
+      </ion-item>
+      <p class="signup-text" [routerLink]="['/login']"  >I'm already a member&nbsp;<a>Sign In?</a></p>
+      <ion-button class="login-button" expand="block" (click)="onSignUp()">Sign Up</ion-button>
+    </form>
+  </div>
+</ion-content>

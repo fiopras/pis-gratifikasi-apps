@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <!-- <h1 class="heading">Welcome<br><br></h1> -->
+    <h1 class="heading-custom">
+      <b>Lapor Gratifikasi </b> <span style="font-weight: normal;">Online</span>
+    </h1> <br><br>
+    <!-- <p class="para">Sign in to continue!</p> -->
+    <p class="sub-title">Crew On Board Compliance Reporting Tools - CONNECT 2.0</p>
+    <form [formGroup]="loginForm">
+      <!-- <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Email</legend>
+          <ion-input formControlName="email" type="email" placeholder="mk.pertamina@pertamina.com"></ion-input>
+        </fieldset>
+      </ion-item>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Password</legend>
+          <ion-input formControlName="password" type="password" placeholder="password"></ion-input>
+        </fieldset>
+      </ion-item> -->
+
+      <!-- Create with use nopek authentication  -->
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Nopek</legend>
+          <ion-input formControlName="nopek" type="nopek"></ion-input>
+        </fieldset>
+      </ion-item>
+
+
+      <ion-item lines="none" class="ion-item">
+        <re-captcha (resolved)="captchaResolved($event)" [siteKey]="siteKey"></re-captcha>
+      </ion-item>
+
+      <!-- <p class="forget-text"><a>Forgot Password?</a></p> -->
+      <ion-button class="login-button-custom" expand="block" type="submit" (click)="onLogin()" [disabled]="!isCaptchaValid">Sign In</ion-button>
+      <!-- <ion-button class="google-button" [routerLink]="['/signup']" expand="block" color="light">Register</ion-button> -->
+    </form>
+  </div>
+</ion-content>

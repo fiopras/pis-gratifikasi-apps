@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+   // Url Live
+  api_url: 'http://ptmpisappdev01.pertamina.com/pis-gratifikasi-apps/api',
+  // Url Local
+  // api_url: 'https://localhost:7036/api',
+  api_token_identifier: 'access_token',
+  name_identifier : 'name_iden',
+  nopek_identifier : 'nopek_iden',
+
+
+  recaptcha: {
+    siteKey: "6LfgzkopAAAAAPpaFUqcO-kJutd0gndjXgtEd-kv"
+  }
 };
 
 /*

@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      Conflict Of Interest
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+  
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="header-title">
+      <h4 style="font-weight: bold;">PERNYATAAN TIDAK BERBENTURAN KEPENTINGAN</h4>
+      <p>
+        Dengan ini saya menyatakan bahwa pada saat pengisian pernyataan ini, saya:
+      </p>
+    </div>
+    <form [formGroup]="coiForm">
+      <ion-list>
+        <ion-item>
+          <ion-select label="Melaksanakan jasa apapun dan/atau memiliki peran apapun dalam perusahaan lain dan/atau usaha pesaing yang sedang melakukan kerjasama usaha dengan PERTAMINA" formControlName="Question1"  label-placement="floating" (ionChange)="updateFormControl('Question1', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Memiliki kepentingan ekonomi secara langsung maupun tidak langsung terhadap perusahaan atau organisasi manapun yang saat ini sedang melakukan kerjasama dengan PERTAMINA atau ingin melakukan kerjasama dengan PERTAMINA" formControlName="Question2"  label-placement="floating" (ionChange)="updateFormControl('Question2', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Memiliki anggota keluarga atau teman yang memiliki kepentingan ekonomi secara langsung maupun tidak langsung terhadap perusahaan atau organisasi yang saat ini melakukan usaha dengan PERTAMINA" formControlName="Question3"  label-placement="floating" (ionChange)="updateFormControl('Question3', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Melakukan transaksi dan/atau menggunakan harta/fasilitas PERTAMINA untuk kepentingan diri sendiri, keluarga, atau golongan" formControlName="Question4"  label-placement="floating" (ionChange)="updateFormControl('Question4', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Mewakili PERTAMINA dalam transaksi dengan perusahaan lain dimana Saya atau anggota keluarga Saya atau teman saya memiliki kepentingan." formControlName="Question5"  label-placement="floating" (ionChange)="updateFormControl('Question5', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-select label="Menerima hadiah, uang atau hiburan dari pemasok atau mitra usaha atau dari agen manapun atau bertindak sebagai atau mewakili pemasok atau mitra usaha dalam transakinya dengan PERTAMINA selain daripada yang diuraikan dalam kebijakan PERTAMINA mengenai Hadiah dan Hiburan" formControlName="Question6"  label-placement="floating" (ionChange)="updateFormControl('Question6', $event)">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-button class="submit-button" (click)="onSubmit()" expand="block">Submit</ion-button>
+
+    </form>
+  </div>
+</ion-content>

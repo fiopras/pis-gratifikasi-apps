@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <img (click)="navigateTo('/conflict-of-interest')" src="/assets/logopis.png" alt="">
+  </ion-buttons>
+
+  <ion-title class="title-with-image"></ion-title>
+
+  <ion-buttons slot="end">
+    <ion-button (click)="logout()">
+      <!-- <ion-icon name="settings-outline"></ion-icon> -->
+      <!-- Logout Button -->
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid class="container">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of imageItems">
+        <!-- <ion-card class="rounded-card"> -->
+          <img [src]="item.imageUrl" alt="" class="responsive-image" (click)="navigateTo(item.url)">
+        <!-- </ion-card> -->
+        <!-- <div class="title">{{item.title}}</div> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

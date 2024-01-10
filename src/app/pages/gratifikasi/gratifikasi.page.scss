@@ -1,0 +1,23 @@
+ion-toolbar {
+    --background: #086DB5;
+    --color: white;
+    --min-height: 80px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+}
+
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+  --background: #0785df;
+  --color: white;
+}
+
+ion-accordion.accordion-collapsing ion-item[slot="header"],
+ion-accordion.accordion-collapsed ion-item[slot="header"] {
+  --background:#0785df;
+  --color: white;
+}
+
+.container {
+    margin: 50px;
+}

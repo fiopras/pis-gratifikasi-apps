@@ -1,0 +1,185 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      Gratifikasi
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="header-title">
+      <h4 style="font-weight: bold;">LAPORAN GRATIFIKASI</h4>
+      <p>
+        Lapor Gratifikasi adalah pemberian dan/atau penerimaan dalam arti luas, yakni meliputi Hadiah/Cendramata dan Hiburan dari dan/atau kepada Insan Pertamina, baik yang diterima didalam negeri maupun luar negeri dan yang dilakukan dengan menggunakan sarana elektronik dan/atau tanpa melalui sarana elektronik
+      </p>
+      <h5>
+        Apakah anda menerima/menolak adanya Gratifikasi?
+      </h5>
+    </div>
+    <form [formGroup]="gratifikasiForm">
+      <ion-list>
+        <ion-accordion-group [multiple]="true" [value]="['first', 'second', 'third']" >
+          <ion-accordion value="first">
+            <ion-item slot="header">
+              <!-- <ion-label>Penerimaan/Penolakan Gratifikasi</ion-label> -->
+              <ion-label>Keterangan</ion-label>
+
+            </ion-item>
+            <div class="ion-padding" slot="content">
+
+              <!-- <ion-radio-group formControlName="AcceptanceRejection" (ionChange)="activedForm($event)">
+                <ion-item>
+                  <ion-label>Tidak Ada Penerimaan</ion-label>
+                  <ion-radio value="no"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Ada Penerimaan</ion-label>
+                  <ion-radio value="yes"></ion-radio>
+                </ion-item>
+              </ion-radio-group> -->
+              <!-- Change to pis-gratifikasi -->
+              <ion-radio-group formControlName="keterangan" (ionChange)="activedForm($event)">
+                <ion-item>
+                  <ion-label>Tidak Ada Penerimaan</ion-label>
+                  <ion-radio value="Tidak Ada Penerimaan"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Ada Penerimaan</ion-label>
+                  <ion-radio value="Ada Penerimaan"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </div>
+          </ion-accordion>
+
+
+
+          <ion-accordion value="second" style="margin-top: 30px;"  *ngIf="showForm">
+            <ion-item slot="header">
+              <ion-label>Informasi User</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <!-- <ion-list>
+                <ion-item>
+                  <ion-input  label="Nama Pemberi" formControlName="NamaPemberi"  labelPlacement="floating" placeholder="cth : Jenie Widjaja"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Pekerjaan/ Jabatan Pemberi" formControlName="PekerjaanJabatan" labelPlacement="floating" placeholder=""></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Email Pemberi" formControlName="EmailPemberi" labelPlacement="floating" placeholder="Contoh: pemberi@gmail.com"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input type="number"  label="No Pemberi" formControlName="NoPemberi" labelPlacement="floating" placeholder="(62)-XXXX"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Hubungan Dengan Pemberi" formControlName="HubPemberi" labelPlacement="floating" placeholder="Contoh: Kerabat"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Alasan Pemberian" formControlName="AlasanPemberian" labelPlacement="floating" placeholder="Jelaskan Alasan Pemberian"></ion-input>
+                </ion-item>
+              </ion-list> -->
+
+              <!-- Change to pis-gratifikasi -->
+
+              <ion-list>
+
+                <ion-item style="display: none;">
+                  <ion-input  label="Nopek" formControlName="nopek"  labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <ion-item style="display: none;">
+                  <ion-input  label="Nama" formControlName="nama"  labelPlacement="floating"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                  <ion-input  label="Nama Pemberi" formControlName="NamaPemberi"  labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Alasan Pemberi" formControlName="AlasanPemberian" labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Hubungan Pekerjaan" formControlName="HubunganPekerjaan" labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Objek Jasa" formControlName="Objek_jasa" labelPlacement="floating"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input  label="Kronologis" formControlName="Kronologis" labelPlacement="floating"></ion-input>
+                </ion-item>
+
+              </ion-list>
+
+            </div>
+          </ion-accordion>
+
+          <!-- Disable Temporary -->
+          <!-- <ion-accordion value="third" style="margin-top: 30px;"  *ngIf="showForm">
+            <ion-item slot="header">
+              <ion-label>Objek Barang/ Uang</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <ion-list>
+                <ion-item>
+                  <ion-select label="Jenis Pelaporan" label-placement="floating" formControlName="JenisPelaporan">
+                    <ion-select-option value="Penerimaan">Penerimaan</ion-select-option>
+                    <ion-select-option value="Tidak Ada Penerimaan">Tidak Ada Penerimaan</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-select label="Jenis Peristiwa" label-placement="floating" formControlName="JenisPeristiwa">
+                    <ion-select-option value="Penerimaan">Penerimaan</ion-select-option>
+                    <ion-select-option value="Tidak Ada Penerimaan">Tidak Ada Penerimaan</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-select label="Jenis Penerimaan" label-placement="floating" formControlName="JenisPenerimaan">
+                    <ion-select-option value="Barang">Barang</ion-select-option>
+                    <ion-select-option value="Uang">Uang</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input label="Urian Barang" formControlName="UraianBarang" labelPlacement="floating" placeholder="Jelaskan Urian Barang"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-select label="Mata Uang" formControlName="MataUang" label-placement="floating">
+                    <ion-select-option value="IDR">Rupiah Indonesia(IDR)</ion-select-option>
+                    <ion-select-option value="RM">Ringgit Malaysia</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input type="number" label="Nilai Nominal Taksiran" formControlName="NilaiNominal" labelPlacement="floating" placeholder="Jelaskan Urian Barang"></ion-input>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ion-accordion> -->
+        </ion-accordion-group>
+      </ion-list>
+
+      <ion-button class="submit-button" (click)="onSubmit()" expand="block">Submit</ion-button>
+
+    </form>
+  </div>
+</ion-content>

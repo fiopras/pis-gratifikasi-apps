@@ -1,0 +1,65 @@
+ion-toolbar {
+    --background: #086DB5;
+    --color: white;
+    --min-height: 80px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+}
+
+.container {
+    margin: 50px;
+}
+
+.paraf {
+    border-bottom: 1px solid black; 
+    margin-top: 20%; 
+    width: 40%;
+}
+
+.hidden-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  label.submit-button {
+    display: inline-block;
+    padding: 10px 20px; /* Sesuaikan ukurannya sesuai kebutuhan */
+    background-color: #3880ff; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    cursor: pointer; /* Tampilkan kursor tangan saat diarahkan */
+    border: none; /* Hilangkan border */
+    border-radius: 4px; /* Sudut membulat */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px; /* Ukuran teks */
+    line-height: 1.3;
+    width: 100%;
+  }
+  
+  label.submit-button input[type="file"] {
+    display: none; /* Sembunyikan input file */
+  }
+
+  .success-toast {
+    --background: #4CAF50 !important; /* Warna latar belakang hijau */
+    color: #fff; /* Warna teks putih atau sesuai kebutuhan Anda */
+  }
+
+  ion-toast.custom-toast {
+    --background: 	#2DD36F;
+    // --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+    --color: white;
+    --min-height: 80px;
+  }
+
+  ion-toast.custom-toast::part(message) {
+    font-weight: bold;
+  }
+  
+  // ion-toast.custom-toast::part(button) {
+  //   border-left: 1px solid #d2d2d2;
+  //   color: #030207;
+  //   font-size: 15px;
+  // }
+  

@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">
+      Code of Conduct
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="header-title">
+      <h4 style="font-weight: bold; text-align: center;">Pedoman Code Of Conduct</h4>
+      <ion-button class="submit-button" (click)="pdfView()" color="danger" expand="block">View Pdf</ion-button>
+
+        <h5 style="font-weight: bold;">Saya bertanda tangan di bawah ini:</h5>
+        <p>
+         Nama Lengkap : {{user.userName}} <br>
+         Nopek : {{user.noPek}} <br>
+         Perusahaan : {{user.perusahaan}} <br>
+         Jabatan : {{user.jabatan}}
+        </p>
+  
+        <p>
+          Dengan ini menyatakan bahwa saya secara pribadi:
+        </p>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">1.</ion-col>
+            <ion-col>
+              Telah membaca dan memahami <span style="font-weight: bold;">Pedoman Perilaku (Code of Conduct)</span> PT Pertamina (Persero) dan bersedia untuk mematuhi semua ketentuan yang tercantum di dalamnya serta menerima sanksi atas pelanggaran yang saya lakukan (sesuai peraturan perusahaan)
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1">2</ion-col>
+            <ion-col>
+              Sebagai pekerja yang bertanggung jawab atas penerapan Pedoman Perilaku (Code of Conduct), saya berkomitment untuk:
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="1"></ion-col>
+            <ion-col>
+              <div style="margin-bottom: 10px;">
+                a. Melakukan Upaya-Upaya untuk menjamin kepatuhan terhadap pedoman perilaku (Code of Conduct) di unit kerja yang menjadi tanggung jawab saya. <br>
+              </div>
+
+              <div style="margin-bottom: 10px;">
+                b. Melaporkan semua pelanggaran yang terjadi di unit kerja saya melalui whistleblowing system Pertamina (jika ada). <br>  
+              </div>
+              <div style="margin-bottom: 10px;">
+                c. Mendukung penegakan Pedoman Perilaku (Code of Conduct) yang dilakukan di lingkungan unti kerja saya.
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <p>
+          Jakarta, Kamis 05 Oktober 2023 <br>
+          Yang Membuat Pernyataan,
+        </p>
+        <div class="paraf">
+          <img #parafImage src="" alt="">
+        </div>
+  
+        <p>
+          Nama Lengkap : {{user.userName}} <br>
+          Nopek : {{user.noPek}} <br>
+          Perusahaan : {{user.perusahaan}}
+         </p>
+
+         <form [formGroup]="cocForm">
+          <ion-input style="display: none;" formControlName="userId" id="userId" value="{{user.id}}"></ion-input>
+          <ion-input style="display: none;" formControlName="alreadyReadIt" id="alreadyReadIt" value="True"></ion-input>
+
+         <ion-button class="submit-button" expand="block" (click)="doSubmit()">Submit</ion-button>
+        </form>
+
+        
+    </div>
+  </div>
+</ion-content>
