@@ -47,6 +47,14 @@ const routes: Routes = [
     path: 'gratifikasi',
     loadChildren: () => import('./pages/gratifikasi/gratifikasi.module').then( m => m.GratifikasiPageModule)
   },
+  {
+    path: 'socialization-gcg',
+    loadChildren: () => import('./pages/socialization-gcg/socialization-gcg.module').then( m => m.SocializationGcgPageModule)
+  },
+  {
+    path: 'coi',
+    loadChildren: () => import('./pages/coi/coi.module').then( m => m.CoiPageModule)
+  },
 ];
 
 @NgModule({

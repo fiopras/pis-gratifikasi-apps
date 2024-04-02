@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   // Url Live
   //use http
-  api_url: 'http://ptmpisappdev01.pertamina.com/pis-gratifikasi-apps/api',
+  api_url: 'https://ptmpisappdev01.pertamina.com/pis-gratifikasi-mobile/api',
   // api_url: 'http://localhost:7036/api',
 
 // 

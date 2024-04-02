@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
    // Url Live
-  api_url: 'http://ptmpisappdev01.pertamina.com/pis-gratifikasi-apps/api',
+  api_url: 'https://ptmpisappdev01.pertamina.com/pis-gratifikasi-mobile/api',
   // Url Local
   // api_url: 'https://localhost:7036/api',
   api_token_identifier: 'access_token',

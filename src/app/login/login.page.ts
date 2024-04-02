@@ -37,7 +37,6 @@ export class LoginPage implements OnInit {
     });
   }
 
-
   get siteKey() {
     return environment.recaptcha.siteKey;
   }

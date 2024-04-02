@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,22 +14,23 @@ export class HomePage {
   
   public imageItems = [
     { id: 1, imageUrl: '/assets/coic.png', url: '/conflict-of-interest' , status: true},
-    { id: 2, imageUrl: '/assets/coc2.png', url: '/code-of-conduct' , status: true},
+    { id: 2, imageUrl: '/assets/coc2.png', url: '/code-of-conduct' , status: false},
     { id: 3, imageUrl: '/assets/gratifikasi.png' , url: '/gratifikasi' , status: false},
-    { id: 4, imageUrl: '/assets/gcg.png', url: '/sosialisasi-gcg', status: true},
+    { id: 4, imageUrl: '/assets/gcg.png', url: '/socialization-gcg', status: false},
   ];
+  isAndroid: boolean;
 
   constructor(
     private router: Router,
     private auth: AuthService,
     private alertCtrl: AlertController,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private platform: Platform
 
-  ) {}
+  ) {
+    this.isAndroid = this.platform.is('android');
 
-  // navigateTo(url: string) {
-  //   this.router.navigateByUrl(url);
-  // }
+  }
 
   navigateTo(url: string) {
     // Cari objek dengan URL yang sesuai dalam array

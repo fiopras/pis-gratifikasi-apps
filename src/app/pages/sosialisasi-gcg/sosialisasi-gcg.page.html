@@ -4,7 +4,7 @@
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
     <ion-title style="text-align: center;">
-     {{titles[0]}}
+     <!-- {{titles[0]}} -->
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
@@ -16,17 +16,17 @@
 <ion-content [fullscreen]="true">
   <ion-item>
     <div>
-      <h5 style="font-weight: 700;">{{titles[0]}}</h5>
-      <video #videoPlayer controls preload="metadata" webkit-playsinline="webkit-playsinline" style="width: 100%;">
+      <!-- <h5 style="font-weight: 700;">{{titles[0]}}</h5> -->
+      <!-- <video #videoPlayer controls preload="metadata" webkit-playsinline="webkit-playsinline" style="width: 100%;">
         <source [src]="videoData[currentVideoIndex].source" type="video/mp4" />
-        <!-- <source [src]="content.signed_url" type="video/mp4" /> -->
-      </video>
+        <source [src]="content.signed_url" type="video/mp4" />
+      </video> -->
     </div>
 
   </ion-item>
-  <div class="container">
+  <!-- <div class="container">
     <div class="header-title">
       <ion-button class="submit-button" expand="block" (click)="playNextVideo()" [disabled]="!isCurrentVideoComplete">Next</ion-button>
     </div>
-  </div>
+  </div> -->
 </ion-content>
