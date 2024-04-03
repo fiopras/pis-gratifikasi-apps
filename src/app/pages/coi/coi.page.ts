@@ -17,8 +17,7 @@ export class CoiPage implements OnInit {
   }
 
   next() {
-    console.log('next');
-    
+    this.router.navigateByUrl('/gratification');    
   }
 
 }

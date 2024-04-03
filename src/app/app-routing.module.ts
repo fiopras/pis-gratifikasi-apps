@@ -55,6 +55,14 @@ const routes: Routes = [
     path: 'coi',
     loadChildren: () => import('./pages/coi/coi.module').then( m => m.CoiPageModule)
   },
+  {
+    path: 'gratification',
+    loadChildren: () => import('./pages/gratification/gratification.module').then( m => m.GratificationPageModule)
+  },
+  {
+    path: 'coc',
+    loadChildren: () => import('./pages/coc/coc.module').then( m => m.CocPageModule)
+  },
 ];
 
 @NgModule({

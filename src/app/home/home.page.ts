@@ -14,7 +14,7 @@ export class HomePage {
   
   public imageItems = [
     { id: 1, imageUrl: '/assets/coic.png', url: '/conflict-of-interest' , status: true},
-    { id: 2, imageUrl: '/assets/coc2.png', url: '/code-of-conduct' , status: false},
+    { id: 2, imageUrl: '/assets/coc2.png', url: '/code-of-conduct' , status: true},
     { id: 3, imageUrl: '/assets/gratifikasi.png' , url: '/gratifikasi' , status: false},
     { id: 4, imageUrl: '/assets/gcg.png', url: '/socialization-gcg', status: false},
   ];
