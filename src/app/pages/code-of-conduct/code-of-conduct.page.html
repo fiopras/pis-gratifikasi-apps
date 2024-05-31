@@ -21,10 +21,10 @@
 
         <h5 style="font-weight: bold;">Saya bertanda tangan di bawah ini:</h5>
         <p>
-         Nama Lengkap : {{user.userName}} <br>
-         Nopek : {{user.noPek}} <br>
-         Perusahaan : {{user.perusahaan}} <br>
-         Jabatan : {{user.jabatan}}
+         Nama Lengkap : {{user.name}} <br>
+         Nopek : {{user.nopek}} <br>
+         <!-- Perusahaan : {{user.perusahaan}} <br>
+         Jabatan : {{user.jabatan}} -->
         </p>
   
         <p>
@@ -72,17 +72,21 @@
         <p>
           Nama Lengkap : {{user.userName}} <br>
           Nopek : {{user.noPek}} <br>
-          Perusahaan : {{user.perusahaan}}
-         </p>
+          <!-- Perusahaan : {{user.perusahaan}} -->
+        </p>
 
          <form [formGroup]="cocForm">
-          <ion-input style="display: none;" formControlName="userId" id="userId" value="{{user.id}}"></ion-input>
-          <ion-input style="display: none;" formControlName="alreadyReadIt" id="alreadyReadIt" value="True"></ion-input>
+          <ion-input style="display: none;" formControlName="Nopek" id="Nopek" value="Nopek"></ion-input>
+          <ion-input style="display: none;" formControlName="Nama" id="Nama" value="Nama"></ion-input>
+          <ion-input style="display: none;" formControlName="StatusCoc" id="StatusCoc" value="StatusCoc"></ion-input>
 
-         <ion-button class="submit-button" expand="block" (click)="doSubmit()">Submit</ion-button>
+         <ion-button class="submit-button" expand="block" (click)="doSubmit()" [disabled]="!hasViewedPdf">Confirm</ion-button>
+         <p>
+            Button konfirmasi bisa di klik ketika anda sudah membaca pdf di atas
+         </p>
         </form>
-
-        
     </div>
+
+
   </div>
 </ion-content>

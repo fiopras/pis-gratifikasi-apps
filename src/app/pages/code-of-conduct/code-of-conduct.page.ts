@@ -14,7 +14,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./code-of-conduct.page.scss'],
 })
 export class CodeOfConductPage implements OnInit {
-  private hasViewedPdf: boolean = false;
+  public hasViewedPdf: boolean = false;
+
   user: any = [];
 
   cocForm!: FormGroup;
@@ -28,11 +29,21 @@ export class CodeOfConductPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const Nopek =  window.localStorage.getItem('nopek_iden');
+  const Nama = window.localStorage.getItem('name_iden');
+
+
     this.cocForm = this.fb.group({
-      userId: [''],
-      alreadyReadIt: ['True'],
+      Nopek: [Nopek],
+      Nama: [Nama],
+      StatusCoc: ['Done'],
     });
-    this.GetUser();
+    this.userDataLocalStorage()
+    // this.GetUser();
+
+    console.log(this.hasViewedPdf);
+
+    const name = window.localStorage.getItem('name_iden');
   }
 
   async pdfView() {
@@ -41,6 +52,7 @@ export class CodeOfConductPage implements OnInit {
       url: pdfUrl
     });
     this.hasViewedPdf = true;
+    console.log(this.hasViewedPdf);
   }
 
   async doSubmit() {
@@ -68,6 +80,8 @@ export class CodeOfConductPage implements OnInit {
             handler: async () => {
               console.log(this.cocForm.value);
 
+              // return false;
+
               try {
                 const token = await window.localStorage.getItem('access_token');
                 const dataSend = this.cocForm.value;
@@ -75,7 +89,7 @@ export class CodeOfConductPage implements OnInit {
                 const loader = await this.loadingCtrl.create({
                   message: 'Please wait...'
                 });
-                await loader.present();
+                // await loader.present();
       
                 const response = await axios.post(`${environment.api_url}/CodeOfConduct`, dataSend, {
                   headers: {
@@ -90,9 +104,14 @@ export class CodeOfConductPage implements OnInit {
                   await loader.dismiss();
                   const alert = await this.alertCtrl.create({
                     header: 'Error',
-                    message: data.error_message,
+                    message: data.error,
                     buttons: ['Ok']
                   });
+
+                    console.log(
+                      'error duplicate goblok'
+                    );
+                    
                   await alert.present();
                 } else {
                   setTimeout(() => {
@@ -102,9 +121,10 @@ export class CodeOfConductPage implements OnInit {
                   this.hasViewedPdf = false;
                 }
               } catch (error) {
+                let errorMessage = 'Anda Sudah Submit Form ini Terima Kasih';
                 const alert = await this.alertCtrl.create({
                   header: 'Error',
-                  message: 'Sorry, something went wrong. Please check your internet connection and try again later.',
+                  message: errorMessage,
                   buttons: ['Ok']
                 });
                 await alert.present();
@@ -115,6 +135,28 @@ export class CodeOfConductPage implements OnInit {
       });
       await alert.present();
     }
+  }
+
+  async userDataLocalStorage() {
+    const name = await window.localStorage.getItem('name_iden');
+    const nopek = await window.localStorage.getItem('nopek_iden');
+
+    // Create a Object 
+    this.user = {
+      name  : name,
+      nopek : nopek,
+    }
+
+    console.log(this.user);
+    
+
+  }
+
+
+
+  async onSubmit() {
+    console.log('test pencet');
+    
   }
 
   async GetUser() {
@@ -144,6 +186,7 @@ export class CodeOfConductPage implements OnInit {
         return;
       }
       this.user = data;
+      
 
       this.cocForm.patchValue({
         userId: this.user.id,

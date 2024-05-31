@@ -5,13 +5,12 @@
 export const environment = {
   production: false,
    // Url Live
-  api_url: 'https://ptmpisappdev01.pertamina.com/pis-gratifikasi-mobile/api',
+  // api_url: 'https://ptmpisappdev01.pertamina.com/pis-gratifikasi-mobile/api',
   // Url Local
-  // api_url: 'https://localhost:7036/api',
+  api_url: 'https://localhost:7036/api',
   api_token_identifier: 'access_token',
   name_identifier : 'name_iden',
   nopek_identifier : 'nopek_iden',
-
 
   recaptcha: {
     siteKey: "6LfgzkopAAAAAPpaFUqcO-kJutd0gndjXgtEd-kv"
