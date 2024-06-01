@@ -107,10 +107,6 @@ export class CodeOfConductPage implements OnInit {
                     message: data.error,
                     buttons: ['Ok']
                   });
-
-                    console.log(
-                      'error duplicate goblok'
-                    );
                     
                   await alert.present();
                 } else {
