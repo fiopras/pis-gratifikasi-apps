@@ -35,7 +35,7 @@
       </ion-item>
 
       <!-- <p class="forget-text"><a>Forgot Password?</a></p> -->
-      <ion-button class="login-button-custom" expand="block" type="submit" (click)="onLogin()" [disabled]="isCaptchaValid">Sign In</ion-button>
+      <ion-button class="login-button-custom" expand="block" type="submit" (click)="onLogin()" [disabled]="!isCaptchaValid">Sign In</ion-button>
       <!-- <ion-button class="google-button" [routerLink]="['/signup']" expand="block" color="light">Register</ion-button> -->
     </form>
   </div>

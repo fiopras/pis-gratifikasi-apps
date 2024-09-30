@@ -28,25 +28,44 @@ export class ConflictOfInterestPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    const Nopek =  window.localStorage.getItem('nopek_iden');
+    const Nama = window.localStorage.getItem('name_iden');
     this.coiForm = this.fb.group({
-      Question1: ['', Validators.required],
-      Question2: ['', Validators.required],
-      Question3: ['', Validators.required],
-      Question4: ['', Validators.required],
-      Question5: ['', Validators.required],
-      Question6: ['', Validators.required],
+      Nopek: [Nopek],
+      Nama: [Nama],
+      Pertanyaan1: ['', Validators.required],
+      Pertanyaan2: ['', Validators.required],
+      Pertanyaan3: ['', Validators.required],
+      Pertanyaan4: ['', Validators.required],
+      Pertanyaan5: ['', Validators.required],
+      Pertanyaan6: ['', Validators.required],
+      StatusCoi: ['Done'],
     });
   }
 
   async onSubmit() {
+    let loader: HTMLIonLoadingElement | undefined = undefined;
+  
     try {
       const token = await window.localStorage.getItem('access_token');
       const dataSend = this.coiForm.value;
   
-      const loader = await this.loadingCtrl.create({
-        message: 'Please Wait...'
+      if (!dataSend.Pertanyaan1 || !dataSend.Pertanyaan2 || !dataSend.Pertanyaan3 || !dataSend.Pertanyaan4 || !dataSend.Pertanyaan5 || !dataSend.Pertanyaan6) {
+        const alert = await this.alertCtrl.create({
+          header: 'Alert',
+          message: 'Sorry, you have to fill in all the questions.',
+          buttons: ['Ok']
+        });
+        await alert.present();
+        return;
+      }
+  
+      loader = await this.loadingCtrl.create({
+        message: 'Please wait...'
       });
       await loader.present();
+  
+      console.log(dataSend);
   
       const response = await axios.post(`${environment.api_url}/ConflictOfInterests`, dataSend, {
         headers: {
@@ -55,84 +74,50 @@ export class ConflictOfInterestPage implements OnInit {
         }
       });
       const data = response.data;
+  
       if (data.error) {
-        await loader.dismiss();
+        if (loader) {
+          await loader.dismiss();
+        }
         const alert = await this.alertCtrl.create({
           header: 'Error',
-          message: data.error_message,
+          message: 'Anda sudah submit form ini terima kasih',
           buttons: ['Ok']
         });
         await alert.present();
       } else {
         setTimeout(() => {
-          loader.dismiss();
-          this.router.navigateByUrl('/conflict-of-interest/coi-detail')
-        }, 1000);
+          if (loader) {
+            loader.dismiss();
+          }
+          this.router.navigateByUrl('/home');
+        }, 1500);
       }
     } catch (error) {
+      let errorMessage = 'Anda Sudah Submit Form ini Terima Kasih';
       const alert = await this.alertCtrl.create({
-        header: 'Error',
-        message: 'Sorry, something went wrong. Please check your internet connection and try again later.',
+        header: 'Alert',
+        message: errorMessage,
         buttons: ['Ok']
       });
       await alert.present();
+      if (loader) {
+        await loader.dismiss();
+      }
+      alert.onDidDismiss().then(() => {
+        this.router.navigateByUrl('/home');
+      });
     }
   }
-
-
+  
   goToPage(url: string) {
     this.router.navigateByUrl(url);
   }
-  
-
-
-  // async onSubmit() {
-  //   try {
-  //     const token = await this.storage.get(environment.access_token_identifier);
-      
-  //     const loader = await this.loadingCtrl.create({
-  //       message: 'Wait'
-  //     });
-  //     await loader.present();
-  
-  //     const response = await axios.post(`${this.apiUrl}/submit-question`, dataToSend, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //         Authorization: `Bearer ${token}`
-  //       }
-  //     });
-  
-  //     const data = response.data;
-  
-  //     if (data.error) {
-  //       await loader.dismiss();
-  //       const alert = await this.alertCtrl.create({
-  //         header: 'Error',
-  //         message: data.error_message,
-  //         buttons: ['Ok']
-  //       });
-  //       await alert.present();
-  //     } else {
-  //       setTimeout(() => {
-  //         loader.dismiss();
-  //       }, 100);
-  //     }
-  //   } catch (error) {
-  //     const alert = await this.alertCtrl.create({
-  //       header: 'Error',
-  //       message: 'Sorry, something went wrong. Please check your internet connection and try again later.',
-  //       buttons: ['Ok']
-  //     });
-  //     await alert.present();
-  //   }
-  // }
-  
 
   updateFormControl(question: string, event: any) {
-    console.log(question);
+    console.log(question, 'test');
     this.coiForm.get(question)?.setValue(event.detail.value);
   }
-  
 
   async presentAlert() {
     const alert = await this.alertCtrl.create({
@@ -157,7 +142,6 @@ export class ConflictOfInterestPage implements OnInit {
         },
       ],
     });
-  
     await alert.present();
   }
 

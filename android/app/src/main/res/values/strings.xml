@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Pertamina App</string>
-    <string name="title_activity_main">Pertamina App</string>
+    <string name="app_name">PIS Gratifikasi</string>
+    <string name="title_activity_main">PIS Gratifikasi</string>
     <string name="package_name">com.pertamina.app</string>
     <string name="custom_url_scheme">com.pertamina.app</string>
 </resources>
