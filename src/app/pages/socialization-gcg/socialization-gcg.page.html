@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="container">
+  <!-- <div class="container">
     <p class="ion-text-justify">
       Guna memberikan kemudahan pelayanan kepada Perwira PIS, Fungsi Compliance menyediakan Compliance Online System yang merupakan sistem monitoring online terhadap penerapan prinsip-prinsip Good Corporate Governance (“GCG”) di Perseroan. Penerapan prinsip GCG tersebut tercermin pada kepatuhan Pekerja terhadap Code of Conduct, penyampaian Conflict of Interest, Pelaporan LHKPN, keikutsertaan pekerja dalam sosialisasi yang dilaksanakan sekali dalam 1 (satu) tahun, dan pelaporan Gratifikasi yang dilaksanakan setiap 6 (enam) bulan sekali atau 2 (dua) kali dalam 1 (satu) tahun. 
     </p>
@@ -33,5 +33,48 @@
     <div class="btn-padding">
       <ion-button  expand="block" (click)="next()">Next</ion-button>
     </div>
-  </div>
+  </div> -->
+
+
+  <!-- <div class="container">
+    <ion-list>
+      <ion-radio-group (ionChange)="handleChange($event)">
+        <ion-item *ngFor="let food of foods; trackBy: trackItems">
+          <ion-radio [value]="food">{{ food.name }}</ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div> -->
+
+  <!-- <div class="container"> -->
+    
+    <ion-list>
+
+      <div class="ion-text-center" style="margin-bottom: -28px;">
+        <img width="155" height="auto" src="/assets/quiz-icon.png"/>
+      </div>
+
+      <div style="margin-left: 10px;">
+        <p class="ion-text-justify" style="font-weight: bold;">
+          1/10 Code Of Conduct Merupakan ?
+        </p>
+      </div>
+
+      <ion-radio-group [(ngModel)]="selectedFood" (ionChange)="handleChange($event)">
+        <ion-card *ngFor="let food of foods; trackBy: trackItems" 
+                  [ngClass]="{'selected-card': selectedFood?.id === food.id}">
+          <ion-item>
+            <!-- Add ion-text-wrap for long text -->
+            <ion-label class="ion-text-wrap">{{ food.name }}</ion-label>
+            <ion-radio slot="start" [value]="food"></ion-radio>
+          </ion-item>
+        </ion-card>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="btn-padding" style="margin-left: 12px; margin-right: 12px;">
+      <ion-button  expand="block" (click)="next()">Next</ion-button>
+    </div>
+  <!-- </div> -->
+
 </ion-content>

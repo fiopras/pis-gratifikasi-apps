@@ -1,197 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-padding">Conflict of Interest</ion-title>
+    <ion-title class="ion-padding">Compliance Online System</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="container">
-    
-    <p style="text-align: justify;">
-       <b>Conflict of Interest atau Konflik Kepentingan</b> adalah situasi di mana Perwira PIS yang mendapatkan kekuasaan dan kewenangan, memiliki atau diduga memiliki kepentingan pribadi atas setiap penggunaan wewenang yang dimilikinya, sehingga dapat mempengaruhi kualitas dan kinerja yang seharusnya. 
-    </p>
+  <ion-list>
 
+    <div class="ion-text-center" style="margin-bottom: -28px;">
+      <img width="155" height="auto" src="/assets/quiz-icon.png"/>
+    </div>
 
-      <p style="font-size: 12px; font-weight: bold;">
-        Prinsip Dasar Konflik Kepentingan (Pribadi /Keluarga /Golongan) 
+    <div style="margin-left: 10px;">
+      <p class="ion-text-justify" style="font-weight: bold; margin-right: 16px;">
+        2/10 Penyampaian LHKPN oleh pekerja yang baru menjabat di jabatan awal dapat dilakukan dalam waktu paling lambat ...
       </p>
+    </div>
 
-      <!-- <ion-accordion-group [multiple]="true" [value]="['first', 'second', 'third']">
-        <ion-accordion value="first">
-          <ion-item slot="header">
-            <ion-label>1</ion-label>
-          </ion-item>
-          <div  slot="content">
-            <p>
-              Dilarang melakukan transaksi dan/atau menggunakan harta perusahaan untuk kepentingan pribadi, keluarga ataupun golongan. 
-            </p>
-          </div>
-        </ion-accordion>
+    <ion-radio-group [(ngModel)]="selectedFood" (ionChange)="handleChange($event)">
+      <ion-card *ngFor="let food of foods; trackBy: trackItems" 
+                [ngClass]="{'selected-card': selectedFood?.id === food.id}">
+        <ion-item>
+          <!-- Add ion-text-wrap for long text -->
+          <ion-label class="ion-text-wrap">{{ food.name }}</ion-label>
+          <ion-radio slot="start" [value]="food"></ion-radio>
+        </ion-item>
+      </ion-card>
+    </ion-radio-group>
+  </ion-list>
 
-        <ion-accordion value="second" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>2</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang menerima dan/atau memberi hadiah/manfaat dalam bentuk apapun yang berkaitan dengan kedudukannya di dalam perusahaan dari mitra kerja, penyedia barang dan jasa serta perusahaan pesaing rekanan/mitra kerja. 
-            </p>
-          </div>
-        </ion-accordion>
-      </ion-accordion-group> -->
-
-      <!-- <ion-accordion-group [multiple]="true" >
-        <ion-accordion value="first">
-          <ion-item slot="header">
-            <ion-label>1</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang melakukan transaksi dan/atau menggunakan harta perusahaan untuk kepentingan pribadi, keluarga ataupun golongan. 
-            </p>
-          </div>
-        </ion-accordion>
-        <ion-accordion value="second" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>2</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang menerima dan/atau memberi hadiah/manfaat dalam bentuk apapun yang berkaitan dengan kedudukannya di dalam perusahaan dari mitra kerja, penyedia barang dan jasa serta perusahaan pesaing rekanan/mitra kerja. 
-            </p>
-          </div>
-        </ion-accordion>
-        <ion-accordion value="third" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>3</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang menerima dan/atau memberi barang/parcel/uang/setara uang dalam bentuk apapun pada hari raya keagamaan. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="fourth" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>4</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang mengizinkan mitra kerja atau pihak ketiga memberikan sesuatu dalam bentuk apapun kepada sekelompok Perwira PIS dan/atau di luar Pertamina. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="fifth" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>5</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang menerima refund dan keuntungan pribadi lainnya yang melebihi dan/atau bukan haknya dari hotel atau pihak manapun juga dalam rangka kedinasan atau hal-hal yang dapat menimbulkan potensi konflik kepentingan. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="sixth" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>6</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang bersikap diskriminatif, tidak adil untuk memenangkan penyedia barang/jasa rekanan/mitra kerja tertentu dengan maksud untuk menerima imbalan jasa untuk kepentingan pribadi, keluarga dan/atau golongan. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="seven" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>7</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang memanfaatkan informasi rahasia dan data bisnis perusahaan untuk kepentingan di luar perusahaan. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="eigth" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>8</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang terlibat langsung atau tidak langsung dalam pengelolaan perusahaan pesaing dan/atau perusahaan mitra atau calon mitra lainnya. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="nine" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>9</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Dilarang baik langsung maupun tidak langsung dengan sengaja turut serta dalam pemborongan, pengadaan atau persewaan yang pada saat dilakukan perbuatan, untuk seluruh atau sebagian ditugaskan untuk mengurus atau mengawasinya. 
-            </p>
-          </div>
-        </ion-accordion>
-
-        <ion-accordion value="ten" style="margin-top: 4px;">
-          <ion-item slot="header">
-            <ion-label>10</ion-label>
-          </ion-item>
-          <div slot="content">
-            <p>
-              Membuat pernyataan potensi konflik kepentingan apabila mempunyai hubungan keluarga sedarah dalam hubungan keluarga inti dengan anggota Direksi dan/atau anggota Dewan Komisaris. 
-            </p>
-          </div>
-        </ion-accordion>
-      </ion-accordion-group> -->
-
-      <ol style="margin-left: -15px;">
-        <li>
-          Dilarang melakukan transaksi dan/atau menggunakan harta perusahaan untuk kepentingan pribadi, keluarga ataupun golongan. 
-        </li>
-        <li>
-          Dilarang menerima dan/atau memberi hadiah/manfaat dalam bentuk apapun yang berkaitan dengan kedudukannya di dalam perusahaan dari mitra kerja, penyedia barang dan jasa serta perusahaan pesaing rekanan/mitra kerja. 
-        </li>
-        <li>
-          Dilarang menerima dan/atau memberi barang/parcel/uang/setara uang dalam bentuk apapun pada hari raya keagamaan. 
-        </li>
-        <li>
-          Dilarang mengizinkan mitra kerja atau pihak ketiga memberikan sesuatu dalam bentuk apapun kepada sekelompok Perwira PIS dan/atau di luar Pertamina. 
-        </li>
-        <li>
-          Dilarang menerima refund dan keuntungan pribadi lainnya yang melebihi dan/atau bukan haknya dari hotel atau pihak manapun juga dalam rangka kedinasan atau hal-hal yang dapat menimbulkan potensi konflik kepentingan. 
-        </li>
-        <li>
-          Dilarang bersikap diskriminatif, tidak adil untuk memenangkan penyedia barang/jasa rekanan/mitra kerja tertentu dengan maksud untuk menerima imbalan jasa untuk kepentingan pribadi, keluarga dan/atau golongan. 
-        </li>
-        <li>
-          Dilarang memanfaatkan informasi rahasia dan data bisnis perusahaan untuk kepentingan di luar perusahaan. 
-        </li>
-        <li>
-          Dilarang terlibat langsung atau tidak langsung dalam pengelolaan perusahaan pesaing dan/atau perusahaan mitra atau calon mitra lainnya. 
-        </li>
-        <li>
-          Dilarang baik langsung maupun tidak langsung dengan sengaja turut serta dalam pemborongan, pengadaan atau persewaan yang pada saat dilakukan perbuatan, untuk seluruh atau sebagian ditugaskan untuk mengurus atau mengawasinya. 
-        </li>
-        <li>
-          Membuat pernyataan potensi konflik kepentingan apabila mempunyai hubungan keluarga sedarah dalam hubungan keluarga inti dengan anggota Direksi dan/atau anggota Dewan Komisaris. 
-        </li>
-      </ol>
-
-      <p>
-        Setiap Perwira PIS apabila menemui kondisi konflik kepentingan (conflict of interest) wajib untuk membuat surat pernyataan potensi konflik kepentingan  
-      </p>
-
-      <div class="btn-padding">
-        <ion-button  expand="block" (click)="next()">Next</ion-button>
-      </div>
-
-    
+  <div class="btn-padding" style="margin-left: 12px; margin-right: 12px;">
+    <ion-button  expand="block" (click)="next()">Next</ion-button>
   </div>
 </ion-content>
 

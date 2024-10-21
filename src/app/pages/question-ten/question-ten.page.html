@@ -13,7 +13,7 @@
 
     <div style="margin-left: 10px;">
       <p class="ion-text-justify" style="font-weight: bold; margin-right: 16px;">
-        3/10 Berikut contoh penerimaan gratifikasi yang diperbolehkan ...
+        10/10 Berikut adalah pihak-pihak yang wajib mematuhi Code of Conduct Pertamina ....
       </p>
     </div>
 
@@ -30,7 +30,19 @@
   </ion-list>
 
   <div class="btn-padding" style="margin-left: 12px; margin-right: 12px;">
-    <ion-button  expand="block" (click)="next()">Next</ion-button>
+    <!-- <ion-button  expand="block" (click)="next()">Next</ion-button> -->
+    <form [formGroup]="sociallizationForm">
+      <ion-input style="display: none;" formControlName="Nopek" id="Nopek" value="Nopek"></ion-input>
+      <ion-input style="display: none;" formControlName="Nama" id="Nama" value="Nama"></ion-input>
+      <ion-input style="display: none;" formControlName="StatusSgcg" id="StatusSgcg" value="StatusSgcg"></ion-input>
+      <!-- <p>
+       <ion-button class="submit-button" expand="block" (click)="doSubmit()">Confirm</ion-button>
+        Button konfirmasi bisa di klik ketika anda sudah membaca pdf di atas
+     </p> -->
+     <div class="btn-padding">
+      <ion-button  expand="block" (click)="doSubmit()">Confrim</ion-button>
+    </div>
+    </form>
   </div>
 </ion-content>
 

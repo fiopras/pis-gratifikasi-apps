@@ -27,5 +27,14 @@ ion-accordion.accordion-collapsed ion-item[slot="header"] {
     margin-top: 40px;
 }
 
+ion-label {
+  white-space: normal;  /* Ensures the text will wrap */
+}
+
+.selected-card {
+  background-color: #d1f7c4 !important; /* Change to any color you like */
+  border: 2px solid #0028db; /* Example of a border when selected */
+}
+
 
 

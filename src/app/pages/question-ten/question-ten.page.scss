@@ -7,19 +7,25 @@ ion-toolbar {
     --padding-bottom: 20px;
 }
 
-.container {
-    margin: 50px;
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+  --background: #0785df;
+  --color: white;
 }
 
-.videoPlayer {
-    width: 100%;
-    margin-bottom: 30px;
+ion-accordion.accordion-collapsing ion-item[slot="header"],
+ion-accordion.accordion-collapsed ion-item[slot="header"] {
+  --background:#b4b4b4b4;
+  --color: white;
+}
+
+.container {
+    margin: 50px;
 }
 
 .btn-padding {
     margin-top: 40px;
 }
-
 
 ion-label {
     white-space: normal;  /* Ensures the text will wrap */
@@ -29,3 +35,6 @@ ion-label {
     background-color: #d1f7c4 !important; /* Change to any color you like */
     border: 2px solid #0028db; /* Example of a border when selected */
   }
+
+
+

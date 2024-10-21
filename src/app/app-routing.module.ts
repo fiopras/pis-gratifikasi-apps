@@ -62,7 +62,35 @@ const routes: Routes = [
   {
     path: 'coc',
     loadChildren: () => import('./pages/coc/coc.module').then( m => m.CocPageModule)
+  },  {
+    path: 'question-four',
+    loadChildren: () => import('./pages/question-four/question-four.module').then( m => m.QuestionFourPageModule)
   },
+  {
+    path: 'question-five',
+    loadChildren: () => import('./pages/question-five/question-five.module').then( m => m.QuestionFivePageModule)
+  },
+  {
+    path: 'question-six',
+    loadChildren: () => import('./pages/question-six/question-six.module').then( m => m.QuestionSixPageModule)
+  },
+  {
+    path: 'question-seven',
+    loadChildren: () => import('./pages/question-seven/question-seven.module').then( m => m.QuestionSevenPageModule)
+  },
+  {
+    path: 'question-eight',
+    loadChildren: () => import('./pages/question-eight/question-eight.module').then( m => m.QuestionEightPageModule)
+  },
+  {
+    path: 'question-nine',
+    loadChildren: () => import('./pages/question-nine/question-nine.module').then( m => m.QuestionNinePageModule)
+  },
+  {
+    path: 'question-ten',
+    loadChildren: () => import('./pages/question-ten/question-ten.module').then( m => m.QuestionTenPageModule)
+  },
+
 ];
 
 @NgModule({

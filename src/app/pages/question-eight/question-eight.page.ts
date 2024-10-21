@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-socialization-gcg',
-  templateUrl: './socialization-gcg.page.html',
-  styleUrls: ['./socialization-gcg.page.scss'],
+  selector: 'app-question-eight',
+  templateUrl: './question-eight.page.html',
+  styleUrls: ['./question-eight.page.scss'],
 })
-export class SocializationGcgPage implements OnInit {
+export class QuestionEightPage implements OnInit {
 
   constructor(
     private router : Router,
@@ -18,17 +18,17 @@ export class SocializationGcgPage implements OnInit {
   foods = [
     {
       id: 1,
-      name: 'Struktur oleh organ perusahaan untuk meningkatkan keberhasilan usaha dan akuntabilitas perusahaan',
+      name: 'Penjara 3 (tiga tahun) dan denda Rp. 100.000.000,00 ( Seratus juta rupiah)',
       type: 'fruit',
     },
     {
       id: 2,
-      name: 'Standar perilaku dan etika bisnis insan pertamina untuk melakukan praktek-praktek pengelolaan perusahaan yang baik',
+      name: 'Penjara seumur hidup dan denda Rp. 1.000.000,000,00 (Satu miliar rupiah)',
       type: 'vegetable',
     },
     {
       id: 3,
-      name: 'Prinsip-prinsip yang mendasari suatu proses dan mekanisme pengelolaan perusahaan berlandaskan peraturan perundang-undangan dan etika berusaha.',
+      name: 'Denda senilai gratifikasi yang diterima',
       type: 'dessert',
     },
   ];
@@ -43,13 +43,10 @@ export class SocializationGcgPage implements OnInit {
   }
 
   ngOnInit() {
-    
   }
 
-  
-
   next() {
-    this.router.navigateByUrl('/coi');
+    this.router.navigateByUrl('/question-nine');
   }
 
 }

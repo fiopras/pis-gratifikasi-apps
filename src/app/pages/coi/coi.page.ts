@@ -13,6 +13,36 @@ export class CoiPage implements OnInit {
     private router : Router,
   ) { }
 
+  public selectedFood: { id: number, name: string, type: string } | null = null;
+
+
+  foods = [
+    {
+      id: 1,
+      name: '30 hari setelah pengangkatan atau penetapan',
+      type: 'fruit',
+    },
+    {
+      id: 2,
+      name: '3 bulan setelah pengangkatan atau penetapan',
+      type: 'vegetable',
+    },
+    {
+      id: 3,
+      name: '2 bulan setelah pengangkatan atau penetapan',
+      type: 'dessert',
+    },
+  ];
+
+  trackItems(index: number, item: any) {
+    return item.id;
+  }
+
+  handleChange(ev: any) {
+    this.selectedFood = ev.detail.value;
+    console.log('Selected food:', this.selectedFood);
+  }
+
   ngOnInit() {
   }
 

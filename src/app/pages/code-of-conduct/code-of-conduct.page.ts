@@ -29,7 +29,7 @@ export class CodeOfConductPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const Nopek =  window.localStorage.getItem('nopek_iden');
+  const Nopek =  window.localStorage.getItem('nopek_iden');
   const Nama = window.localStorage.getItem('name_iden');
 
 
@@ -50,7 +50,7 @@ export class CodeOfConductPage implements OnInit {
     console.log('ketika button di click');
     console.log(this.hasViewedPdf);
 
-    const pdf = "https://apps.pertamina.com/pis-gratifikasi-mobile/images/Pedoman-COC.PDF";
+    const pdf = "https://apps.pertamina.com/pis-gratifikasi-mobile/images/Pedoman-CocV2.PDF";
 
     window.open(pdf, '_system');
 

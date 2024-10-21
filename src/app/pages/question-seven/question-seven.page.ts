@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-socialization-gcg',
-  templateUrl: './socialization-gcg.page.html',
-  styleUrls: ['./socialization-gcg.page.scss'],
+  selector: 'app-question-seven',
+  templateUrl: './question-seven.page.html',
+  styleUrls: ['./question-seven.page.scss'],
 })
-export class SocializationGcgPage implements OnInit {
+export class QuestionSevenPage implements OnInit {
 
   constructor(
     private router : Router,
@@ -18,17 +18,17 @@ export class SocializationGcgPage implements OnInit {
   foods = [
     {
       id: 1,
-      name: 'Struktur oleh organ perusahaan untuk meningkatkan keberhasilan usaha dan akuntabilitas perusahaan',
+      name: '10 hari kalender',
       type: 'fruit',
     },
     {
       id: 2,
-      name: 'Standar perilaku dan etika bisnis insan pertamina untuk melakukan praktek-praktek pengelolaan perusahaan yang baik',
+      name: '14 hari kalender',
       type: 'vegetable',
     },
     {
       id: 3,
-      name: 'Prinsip-prinsip yang mendasari suatu proses dan mekanisme pengelolaan perusahaan berlandaskan peraturan perundang-undangan dan etika berusaha.',
+      name: '20 hari kalender',
       type: 'dessert',
     },
   ];
@@ -43,13 +43,10 @@ export class SocializationGcgPage implements OnInit {
   }
 
   ngOnInit() {
-    
   }
 
-  
-
   next() {
-    this.router.navigateByUrl('/coi');
+    this.router.navigateByUrl('/question-eight');
   }
 
 }
